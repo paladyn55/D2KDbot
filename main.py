@@ -93,7 +93,7 @@ async def statupdate(ctx):
     print('doing the big boi command')
     get_ratings_all()
 
-
+#git test vs
 #---------------------
 #get_ratings_all()
 #bot.run(TOKEN)
