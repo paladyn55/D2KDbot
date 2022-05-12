@@ -6,3 +6,14 @@ DevTools listening on ws://localhost:59361/devtools/browser/d49bac85-d694-448d-8
 1652375226036	Marionette	INFO	Listening on port 59406
 Read port: 59406
 1652375226207	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652375956220	Marionette	INFO	Stopped listening on port 59406
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "57340" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofileDOzuFn"
+1652375644693	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofileDOzuFn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57340/devtools/browser/41f4ddb5-8e68-48c9-88eb-351f46a5bd65
+1652375647173	Marionette	INFO	Listening on port 57362
+Read port: 57362
+1652375647215	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652375651576	Marionette	INFO	Stopped listening on port 57362
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

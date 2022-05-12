@@ -9,12 +9,11 @@ import discord
 import random as ran
 import os
 import statgetse
-#import statgetsc
 import requests
 from requests import get
 import csv
 lobby_inst = False
-#huh
+
 
 def usr_add(usr):
     file = open('stats.csv', mode='w')
@@ -43,8 +42,12 @@ def arr_load(file):
         arr.append(line)
     return arr
 
-
-TOKEN = os.environ["TOKEN"]
+#replit
+#TOKEN = os.environ["TOKEN"]
+#VSC
+path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
+T = open(path, 'r')
+print(T)
 prefix = "&"
 bot = commands.Bot(prefix)
 
