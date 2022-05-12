@@ -12,7 +12,7 @@ import statgetse
 #import statgetsc
 import requests
 from requests import get
-
+import csv
 lobby_inst = False
 
 
