@@ -10,7 +10,7 @@ from selenium.webdriver.support.relative_locator import locate_with
 #----------------------------------------------------------------
 t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
-v_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[3]/div/div[1]/div[1]/div/div[1]/span[2]'
+v_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[3]/div/div[1]/div[1]/div/div[1]/span[2]'
 s_xp = '/html/body/app-root/div/div[2]/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
 #s_xp = /html/body/app-root/div/div/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]
 #id = closeIconHit
@@ -37,7 +37,7 @@ def stat_check(url):
 	url_n = 'https://trials.report/report/2/' + url_n
 	#maybe try requests instead of selenium for s KD
 	driver.get(url_n)
-	time.sleep(25)
+	time.sleep(10)
 	skd = driver.find_element(By.XPATH, s_xp).text
 	kdarr = [skd, tkd, ckd, vkd]
 	print(kdarr)

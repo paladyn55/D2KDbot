@@ -16,29 +16,21 @@ lobby_inst = False
 
 
 def usr_add(usr):
-    file = open('stats.csv', mode='w')
+    file = open('stats.csv', mode='w', encoding='utf-8')
     writer = csv.writer(file, delimiter=',')
     writer.writerow(usr)
     file.close()
 
 
 def get_ratings_all():
-    file = open('stats.csv', mode='w')
-    writer = csv.writer(file, delimiter=',')
-    writer.writerow(usr)
-    file.close()
-    u_l = open('usr_list.txt', 'w')
-    n = open('DiscName.txt', 'r')
-    n = n.readlines()
-    u = open('D2Tpage.txt', 'r')
-    u = u.readlines()
+    n = arr_load(open('DiscName.txt', 'r', encoding='utf-8'))
+    u = arr_load(open('D2Tpage.txt', 'r', encoding='utf-8'))
     for url in u:
         ind = u.index(url)
         arr_s = statgetse.stat_check(url)
         arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
         print(arr_usr)
         usr_add(arr_usr)
-    u_l.close()
 
 
 def arr_load(file):
@@ -104,5 +96,5 @@ async def statupdate(ctx):
 
 
 #---------------------
-get_ratings_all()
+#get_ratings_all()
 #bot.run(TOKEN)
