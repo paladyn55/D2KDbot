@@ -34,11 +34,13 @@ def stat_check(url):
 	print(ckd)
 	vkd = driver.find_element(By.XPATH, v_xp).text
 	print(vkd)
+	#xpaths consistently working on replit now
+	#trials report does crash occasionally
+	#paladyn stats should be 1.37, 1.12, 1.56, 1.62 (can change slightly but should be roughly that)
 	url_n = url[52:71]
 	url_n = 'https://trials.report/report/2/' + url_n
+	#maybe try requests instead of selenium for s KD
 	driver.get(url_n)
-
-	#WebDriverWait(driver, timeout = 45).until(lambda d: d.find_element_by_xpath("/html/body/app-root/div/div[2]/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/app-player-header/div/div[1]/div[2]/div[1]/h2"))
 	print("1")
 	time.sleep(15)
 	print("2")
