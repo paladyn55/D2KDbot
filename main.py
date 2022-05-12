@@ -14,7 +14,7 @@ import requests
 from requests import get
 import csv
 lobby_inst = False
-
+#huh
 
 def usr_add(usr):
     file = open('stats.csv', mode='w')
