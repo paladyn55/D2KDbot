@@ -17,7 +17,7 @@ lobby_inst = False
 
 def usr_add(usr):
     file = open('stats.csv', mode='w')
-    writer = csv.writer(file, delimiter=', ')
+    writer = csv.writer(file, delimiter=',')
     writer.writerow(usr)
     file.close()
 
