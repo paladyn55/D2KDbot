@@ -8,7 +8,6 @@ driver = webdriver.Chrome(options=chrome_options)
 import warnings
 warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
-import csv
 import time
 from selenium.webdriver.support.relative_locator import locate_with
 from webdriver_manager.chrome import ChromeDriverManager
@@ -17,6 +16,7 @@ t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]
 c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
 v_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[3]/div/div[1]/div[1]/div/div[1]/span[2]'
 s_xp = '//*[@id="swiperContainer"]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
+#s_xp = /html/body/app-root/div/div/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]
 #id = closeIconHit
 # xpaths keep changing, bot is broken, update xpaths
 #try using relative xpaths (below name kd)
@@ -41,9 +41,7 @@ def stat_check(url):
 	url_n = 'https://trials.report/report/2/' + url_n
 	#maybe try requests instead of selenium for s KD
 	driver.get(url_n)
-	print("1")
-	time.sleep(15)
-	print("2")
+	time.sleep(25)
 	skd = driver.find_element(By.XPATH, s_xp).text
 	kdarr = [skd, tkd, ckd, vkd]
 	print(kdarr)

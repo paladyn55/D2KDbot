@@ -8,7 +8,8 @@ from discord.ext import commands
 import discord
 import random as ran
 import os
-import statgets
+import statgetse
+#import statgetsc
 import requests
 from requests import get
 
@@ -30,7 +31,7 @@ def get_ratings_all():
     u = u.readlines()
     for url in u:
         ind = u.index(url)
-        arr_s = statgets.stat_check(url)
+        arr_s = statgetse.stat_check(url)
         arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
         usr_add(arr_usr)
     u_l.close()
