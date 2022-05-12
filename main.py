@@ -95,5 +95,5 @@ async def statupdate(ctx):
 
 
 #---------------------
-#get_ratings_all()
+get_ratings_all()
 #bot.run(TOKEN)
