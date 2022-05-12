@@ -23,6 +23,10 @@ def usr_add(usr):
 
 
 def get_ratings_all():
+    file = open('stats.csv', mode='w')
+    writer = csv.writer(file, delimiter=',')
+    writer.writerow(usr)
+    file.close()
     u_l = open('usr_list.txt', 'w')
     n = open('DiscName.txt', 'r')
     n = n.readlines()
@@ -32,6 +36,7 @@ def get_ratings_all():
         ind = u.index(url)
         arr_s = statgetse.stat_check(url)
         arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+        print(arr_usr)
         usr_add(arr_usr)
     u_l.close()
 

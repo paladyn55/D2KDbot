@@ -98,3 +98,57 @@ Read port: 54997
 1652377233409	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 [Child 45104, MediaDecoderStateMachine #1] WARNING: 270ece339b0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
 [Child 45104, MediaDecoderStateMachine #1] WARNING: 270dac308a0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #1] WARNING: 270dac30ac0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #2] WARNING: 270dac30ac0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #3] WARNING: 270e28cc570 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #3] WARNING: 270e42c2f00 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #4] WARNING: 270e28cc680 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #5] WARNING: 270e28cc680 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #5] WARNING: 270dac308a0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 45104, MediaDecoderStateMachine #6] WARNING: 270e28ccf00 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+1652378465803	Marionette	INFO	Stopped listening on port 54997
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+derer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1652378466955	Marionette	INFO	Stopped listening on port 51335
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofileTSsGvs"
+1652378002068	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofileTSsGvs\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55535/devtools/browser/6161782a-dd75-4eb5-9d0d-b12724338835
+1652378005116	Marionette	INFO	Listening on port 55559
+Read port: 55559
+1652378005209	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[Child 89388, MediaDecoderStateMachine #1] WARNING: 24b84d84130 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 89388, MediaDecoderStateMachine #1] WARNING: 24b7d5af780 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+[Child 89388, MediaDecoderStateMachine #1] WARNING: 24b7d508010 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:327
+JavaScript error: https://live.primis.tech/live/liveVideo.php?vpaidManager=sekindo&s=58057&ri=6C69766553746174737C736B317B54307D7B64323032322D30352D31325F32307D7B7331363735343730367D7B4336327D7B535A47567A64476C756558527959574E725A584975593239747D7B6266697265666F787D7B716465736B746F707D7B6F77696E646F77737D7B583630307D7B593430307D7B66317D7B4C31303833307DFEFE&userIpAddr=81.100.198.165&userUA=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%3B+rv%3A100.0%29+Gecko%2F20100101+Firefox%2F100.0&debugInformation=&isWePassGdpr=0&noViewableMidrollPolicy=off&isDoublePreroll=0&autoSkipVideoSec=30&c2pWaitTime=10&isSinglePageFloatSupport=1&csuuid=627d49d66400e&debugInfo=16754706_&debugPlayerSession=&pubUrlDEMO=&isAsyncDEMO=0&customPlaylistIdDEMO=&sta=16754706&showLogo=0&clkUrl=&plMult=-1&schedule=eyJwcmVfcm9sbCI6MSwibWlkX3JvbGwiOltdLCJnYXAiOiJhdXRvIn0%3D&content=plembed288cmzylixop&secondaryContent=&x=600&y=400&pubUrl=https%3A%2F%2Fdestinytracker.com%2Fdestiny-2%2Fprofile%2Fbungie%2F4611686018478013482%2Foverview&contentNum=1&flow_closeBtn=1&flowCloseTimeout=1&flow_closeButtonPosition=right&flow_direction=br&flow_horizontalOffset=1&flow_bottomOffset=1&impGap=2&flow_width=400&flow_height=225&videoType=sticky&gdpr=1&gdprConsent=&contentFeedId=&geoLati=51.4098&geoLong=-0.0249&vpTemplate=10830&flowMode=seenboth&isRealPreroll=0&playerApiId=&isApp=0&ccpa=0&ccpaConsent=&subId=destinytracker.com, line 371: TypeError: this.config.onViewabilityChange is undefined
+1652378102547	Marionette	INFO	Stopped listening on port 55559
+1652378115213	geckodriver	INFO	Listening on 127.0.0.1:54457
+1652378118266	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54458" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofile6ASK0b"
+1652378118833	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofile6ASK0b\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54458/devtools/browser/2bcd8f8a-de77-41c2-a486-38e9f11f95b9
+1652378122103	Marionette	INFO	Listening on port 54482
+Read port: 54482
+1652378122134	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/dFqp3r-NjKYIiZFGuMjg27V2y58JRdrnPk3CKLoufA4.js line 1 > eval line 7282 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/-xusYJ2at0dbS1ujZyBHkA92CrhnscK4RJsdXU_Rclk.js line 1 > eval line 4907 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1652378468412	Marionette	INFO	Stopped listening on port 54482
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofile3xKXQp"
+1652378379475	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\josep\\AppData\\Local\\Temp\\rust_mozprofile3xKXQp\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52709/devtools/browser/638134fd-7642-416e-816e-d6bafbad7c85
+1652378381393	Marionette	INFO	Listening on port 52737
+Read port: 52737
+1652378381476	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/dFqp3r-NjKYIiZFGuMjg27V2y58JRdrnPk3CKLoufA4.js line 1 > eval line 1229 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/-xusYJ2at0dbS1ujZyBHkA92CrhnscK4RJsdXU_Rclk.js line 1 > eval line 2556 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1652378469155	Marionette	INFO	Stopped listening on port 52737
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
