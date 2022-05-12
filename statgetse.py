@@ -1,16 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
-chrome_options = Options()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(options=chrome_options)
+from webdriver_manager.firefox import GeckoDriverManager
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 import warnings
 warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support.relative_locator import locate_with
-from webdriver_manager.chrome import ChromeDriverManager
 #----------------------------------------------------------------
 t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
