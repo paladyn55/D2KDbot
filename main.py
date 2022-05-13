@@ -14,24 +14,24 @@ from requests import get
 import csv
 lobby_inst = False
 
-
 def usr_add(usr):
     file = open('stats.csv', mode='w', encoding='utf-8')
     writer = csv.writer(file, delimiter=',')
     writer.writerow(usr)
     file.close()
 
-
 def get_ratings_all():
-    n = arr_load(open('DiscName.txt', 'r', encoding='utf-8'))
-    u = arr_load(open('D2Tpage.txt', 'r', encoding='utf-8'))
-    for url in u:
-        ind = u.index(url)
-        arr_s = statgetse.stat_check(url)
-        arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
-        print(arr_usr)
-        usr_add(arr_usr)
-
+		n = arr_load(open('DiscName.txt', 'r', encoding='utf-8'))
+		u = arr_load(open('D2Tpage.txt', 'r', encoding='utf-8'))
+		for url in u:
+				ind = u.index(url)
+				arr_s = statgetse.stat_check(url)
+				arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+				st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
+				arr_usr.append(st_n)
+				print(arr_usr)
+				arr_usr[0].remove("\n")
+				usr_add(arr_usr)
 
 def arr_load(file):
     arr = []
@@ -40,19 +40,17 @@ def arr_load(file):
     return arr
 
 #replit
-#TOKEN = os.environ["TOKEN"]
+TOKEN = os.environ["TOKEN"]
 #VSC
-path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
-T = open(path, 'r')
-print(T)
+#path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
+#T = open(path, 'r')
+#print(T)
 prefix = "&"
 bot = commands.Bot(prefix)
-
 
 @bot.event
 async def on_ready():
     print("Bot is ready!")
-
 
 @bot.command()
 async def register(ctx, arg):
@@ -65,7 +63,6 @@ async def register(ctx, arg):
         print(str(ctx.author) + " registered")
     else:
         await ctx.reply("already registered")
-
 
 @bot.command()
 async def lobby(ctx, arg):
@@ -88,13 +85,9 @@ async def lobby(ctx, arg):
         lobby_inst = False
         await ctx.reply("lobby closed")
 
-
 @bot.command()
 async def statupdate(ctx):
     print('doing the big boi command')
     get_ratings_all()
-
-
 #---------------------
-#get_ratings_all()
 #bot.run(TOKEN)

@@ -314,3 +314,39 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 JavaScript error: https://live.primis.tech/live/liveVideo.php?vpaidManager=sekindo&s=58057&ri=6C69766553746174737C736B317B54307D7B64323032322D30352D31325F32337D7B7331363735343730367D7B4336327D7B535A47567A64476C756558527959574E725A584975593239747D7B6266697265666F787D7B716465736B746F707D7B6F77696E646F77737D7B583630307D7B593430307D7B66317D7B4C31303833307DFEFE&userIpAddr=81.100.198.165&userUA=Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%3B+rv%3A100.0%29+Gecko%2F20100101+Firefox%2F100.0&debugInformation=&isWePassGdpr=0&noViewableMidrollPolicy=off&isDoublePreroll=0&autoSkipVideoSec=30&c2pWaitTime=10&isSinglePageFloatSupport=1&csuuid=627d699313f59&debugInfo=16754706_&debugPlayerSession=&pubUrlDEMO=&isAsyncDEMO=0&customPlaylistIdDEMO=&sta=16754706&showLogo=0&clkUrl=&plMult=-1&schedule=eyJwcmVfcm9sbCI6MSwibWlkX3JvbGwiOltdLCJnYXAiOiJhdXRvIn0%3D&content=plembed288cmzylixop&secondaryContent=&x=600&y=400&pubUrl=https%3A%2F%2Fdestinytracker.com%2Fdestiny-2%2Fprofile%2Fbungie%2F4611686018479632974%2Foverview&contentNum=1&flow_closeBtn=1&flowCloseTimeout=1&flow_closeButtonPosition=right&flow_direction=br&flow_horizontalOffset=1&flow_bottomOffset=1&impGap=2&flow_width=400&flow_height=225&videoType=sticky&gdpr=1&gdprConsent=&contentFeedId=&geoLati=51.4098&geoLong=-0.0249&vpTemplate=10830&flowMode=seenboth&isRealPreroll=0&playerApiId=&isApp=0&ccpa=0&ccpaConsent=&subId=destinytracker.com, line 371: TypeError: this.config.onViewabilityChange is undefined
 1652386823427	Marionette	INFO	Stopped listening on port 62708
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1652433696048	geckodriver	INFO	Listening on 127.0.0.1:50035
+1652433696558	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59929" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilehKHgv9"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652433700137	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilehKHgv9/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59929/devtools/browser/671e2028-f60f-4d20-b009-9c343eb39694
+1652433707555	Marionette	INFO	Listening on port 38287
+1652433707602	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652433714206	geckodriver	INFO	Listening on 127.0.0.1:44959
+1652433714213	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59005" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQmTtLU"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652433715655	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQmTtLU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59005/devtools/browser/f50ff279-863e-40ba-9950-55ef375fad50
+1652433722762	Marionette	INFO	Listening on port 46727
+1652433722857	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652433807596	geckodriver	INFO	Listening on 127.0.0.1:41035
+1652433808101	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51465" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexOVZqD"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652433809594	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexOVZqD/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51465/devtools/browser/90e27a70-bbf0-459c-affe-d3ef94b438ff
+1652433816969	Marionette	INFO	Listening on port 36069
+1652433817150	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652434273275	geckodriver	INFO	Listening on 127.0.0.1:46995
+1652434273779	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47421" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileE2J8o6"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652434275307	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileE2J8o6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:47421/devtools/browser/0e167072-6a76-48d1-bfc9-41537e6e81ed
+1652434282667	Marionette	INFO	Listening on port 38703
+1652434282802	Marionette	WARN	TLS certificate errors will be ignored for this session
