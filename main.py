@@ -20,6 +20,19 @@ def usr_add(usr):
     writer.writerow(usr)
     file.close()
 
+def stat_add_one(name, url):
+	n = open("DiscName.txt", 'a')
+	n.write(name)
+	n.close()
+	u = open("D2Tpage.txt", 'a')
+	url = url + '\n'
+	u.write(url)
+	u.close
+	arr_s = statgetse.stat_check(url)
+	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
+	arr_usr.append(st_n)
+
 def get_ratings_all():
 		n = arr_load(open('DiscName.txt', 'r', encoding='utf-8'))
 		u = arr_load(open('D2Tpage.txt', 'r', encoding='utf-8'))
@@ -54,15 +67,16 @@ async def on_ready():
 
 @bot.command()
 async def register(ctx, arg):
-    names = open("DiscName.txt", 'r')
-    names = names.readlines()
-    usr = str(ctx.author) + '\n'
-    if usr not in names:
-        stat_add_one(usr, arg)
-        await ctx.reply("registered")
-        print(str(ctx.author) + " registered")
-    else:
-        await ctx.reply("already registered")
+		names = open("DiscName.txt", 'r')
+		usr = str(ctx.author) + '\n'
+		if usr not in names:
+				names.close()
+				stat_add_one(usr, arg) # PLZ SORT THIS FUNCTION OUT, just do get_ratings but without the for loop
+				await ctx.reply("registered")
+				print(str(ctx.author) + " registered")
+		else:
+				await ctx.reply("already registered")
+				names.close()
 
 @bot.command()
 async def lobby(ctx, arg):
