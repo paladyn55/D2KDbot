@@ -9,8 +9,8 @@ import os
 import statgetse
 import csv
 lobby_inst = False
-
-
+f = open("lobby.txt", 'w')
+f.close()
 def usr_add(usr):
 	file = open('stats.csv', mode='w', encoding='utf-8')
 	writer = csv.writer(file, delimiter=',')
@@ -18,10 +18,10 @@ def usr_add(usr):
 	file.close()
 
 def stat_add_one(name, url):
-	n = open("DiscName.txt", 'a')
+	n = open("DiscNameT.txt", 'a')
 	n.write(name)
 	n.close()
-	u = open("D2Tpage.txt", 'a')
+	u = open("D2TpageT.txt", 'a')
 	url = url + '\n'
 	u.write(url)
 	u.close
@@ -32,8 +32,8 @@ def stat_add_one(name, url):
 	
 
 def get_ratings_all():
-	n = arr_load(open('DiscName.txt', 'r', encoding='utf-8'))
-	u = arr_load(open('D2Tpage.txt', 'r', encoding='utf-8'))
+	n = arr_load(open('DiscNameT.txt', 'r', encoding='utf-8'))
+	u = arr_load(open('D2TpageT.txt', 'r', encoding='utf-8'))
 	for url in u:
 		ind = u.index(url)
 		arr_s = statgetse.stat_check(url)
@@ -72,7 +72,7 @@ async def on_ready():
 
 @bot.command()
 async def register(ctx, arg):
-	names = open("DiscName.txt", 'r')
+	names = open("DiscNameT.txt", 'r')
 	usr = str(ctx.author) + '\n'
 	if usr not in names:
 		names.close()
@@ -96,10 +96,14 @@ async def lobby(ctx, arg):
 			c = open('stats.csv', 'r')
 			cr = csv.reader(c)
 			if in_check(cr, str(ctx.author)) == 1:
-				lobby = open('lobby.txt', 'a')
-				lobby.write(str(ctx.author))
-				lobby.close()
-				await ctx.reply(str(ctx.author) + ' has joined the lobby')
+				l = open("lobby.txt", 'r')
+				if str(ctx.author) in l:
+					lobby = open('lobby.txt', 'a')
+					lobby.write(str(ctx.author) + '\n')
+					lobby.close()
+					await ctx.reply(str(ctx.author) + ' has joined the lobby')
+				else:
+					await ctx.reply("user has already joined the lobby")
 	if str(arg) == 'end':
 		a = open("lobby.txt", "w")
 		a.close()
