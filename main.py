@@ -60,9 +60,9 @@ def in_check(csv_o, str):
 #replit
 #TOKEN = os.environ["TOKEN"]
 #VSC
-path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
-T = open(path, 'r')
-print(T)
+#path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
+#T = open(path, 'r')
+#print(T)
 prefix = "&"
 bot = commands.Bot(prefix)
 
