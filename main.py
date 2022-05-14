@@ -8,9 +8,9 @@ from discord.ext import commands
 import os
 import statgetse
 import csv
+import team_gen
 lobby_inst = False
-f = open("lobby.txt", 'w')
-f.close()
+
 def usr_add(usr):
 	file = open('stats.csv', mode='w', encoding='utf-8')
 	writer = csv.writer(file, delimiter=',')
@@ -115,4 +115,6 @@ async def statupdate(ctx):
     print('doing the big boi command')
     get_ratings_all()
 #---------------------
-bot.run(TOKEN)
+#bot.run(TOKEN)
+#get_ratings_all()
+team_gen.team_create()
