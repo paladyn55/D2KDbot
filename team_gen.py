@@ -4,17 +4,20 @@ def arr_load(file):
 	for line in file:
 		arr.append(line)
 	return arr
+def csv_arr(csv_o):
+    arr = []
+    for row in csv_o:
+        arr.append(row)
+    return arr
 def team_create():
     lobby = arr_load(open("lobby.txt", 'r', encoding='utf-8'))
     c = open('statsT.csv', 'r', encoding='utf-8')
     cr = csv.reader(c)
+    usr_arr_t = csv_arr(cr)
     arr_usrs = []
-    print(lobby)
     for usr in lobby:
-        print("there should be 6 of these")
-        for row in cr:
+        for row in usr_arr_t:
             usr = usr.strip('\n')
-            print(row[0])
             if usr in row:
                 arr_usrs.append(row)
     return arr_usrs
