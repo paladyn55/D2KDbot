@@ -58,11 +58,11 @@ def in_check(csv_o, str):
 	return in_tr
 	
 #replit
-TOKEN = os.environ["TOKEN"]
+#TOKEN = os.environ["TOKEN"]
 #VSC
-#path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
-#T = open(path, 'r')
-#print(T)
+path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
+T = open(path, 'r')
+print(T)
 prefix = "&"
 bot = commands.Bot(prefix)
 
@@ -117,4 +117,4 @@ async def statupdate(ctx):
 #---------------------
 #bot.run(TOKEN)
 #get_ratings_all()
-team_gen.team_create()
+print(team_gen.team_create())
