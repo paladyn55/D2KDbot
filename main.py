@@ -12,7 +12,7 @@ import team_gen
 lobby_inst = False
 
 def usr_add(usr):
-	file = open('stats.csv', mode='w', encoding='utf-8')
+	file = open('stattemp.csv', mode='a', encoding='utf-8')
 	writer = csv.writer(file, delimiter=',')
 	writer.writerow(usr)
 	file.close()
@@ -43,6 +43,12 @@ def get_ratings_all():
 		print(arr_usr)
 		arr_usr[0].remove("\n")
 		usr_add(arr_usr)
+	c1 = open("stats.csv", mode='w', encoding='utf-8')
+	c2 = open("stattemp.csv", mode='r', encoding="utf-8")
+	w = csv.writer(c1, delimiter=',')
+	r = csv.reader(c2)
+	for row in r:
+		w.writerow(row)
 
 def arr_load(file):
 	arr = []
@@ -120,6 +126,3 @@ async def statupdate(ctx):
     get_ratings_all()
 #---------------------
 bot.run(TOKEN)
-#get_ratings_all()
-
-	
