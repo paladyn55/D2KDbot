@@ -58,7 +58,7 @@ def in_check(csv_o, str):
 	return in_tr
 	
 #replit
-#TOKEN = os.environ["TOKEN"]
+TOKEN = os.environ["TOKEN"]
 #VSC
 #path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
 #T = open(path, 'r')
@@ -92,7 +92,6 @@ async def lobby(ctx, arg):
 		await ctx.reply("lobby started")
 	if str(arg) == "join":
 		if lobby_inst == True:
-			print(str(ctx.author))
 			c = open('stats.csv', 'r')
 			cr = csv.reader(c)
 			if in_check(cr, str(ctx.author)) == 1:
@@ -102,6 +101,7 @@ async def lobby(ctx, arg):
 					lobby.write(str(ctx.author) + '\n')
 					lobby.close()
 					await ctx.reply(str(ctx.author) + ' has joined the lobby')
+					print(str(ctx.author) + "joined the lobby")
 				else:
 					await ctx.reply("user has already joined the lobby")
 	if str(arg) == 'end':
@@ -109,13 +109,17 @@ async def lobby(ctx, arg):
 		a.close()
 		lobby_inst = False
 		await ctx.reply("lobby closed")
-
+	if str(arg) == "teamgen":
+		team_num = 1
+		for team in team_gen.team_create():
+			await ctx.reply(f"team {str(team_num)}:\n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
+			team_num += 1
 @bot.command()
 async def statupdate(ctx):
     print('doing the big boi command')
     get_ratings_all()
 #---------------------
-#bot.run(TOKEN)
+bot.run(TOKEN)
 #get_ratings_all()
-for usr in team_gen.team_create():
-	print(usr)
+
+	
