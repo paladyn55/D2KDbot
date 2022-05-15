@@ -117,4 +117,5 @@ async def statupdate(ctx):
 #---------------------
 #bot.run(TOKEN)
 #get_ratings_all()
-print(team_gen.team_create())
+for usr in team_gen.team_create():
+	print(usr)
