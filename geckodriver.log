@@ -1092,3 +1092,61 @@ JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError
 JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
 1652691283920	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
 JavaScript error: , line 0: uncaught exception: undefined
+1652694551536	geckodriver	INFO	Listening on 127.0.0.1:57703
+1652694551594	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44709" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileLoCehw"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652694556293	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileLoCehw/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:44709/devtools/browser/134a9e8f-1e7f-41bc-8a6a-2a69ce1b26ab
+1652694563917	Marionette	INFO	Listening on port 45469
+1652694564033	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=57, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=58, line 1: SyntaxError: expected expression, got '<'
+1652694980592	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1652694988830	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1652695180887	geckodriver	INFO	Listening on 127.0.0.1:45647
+1652695180893	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "39411" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5bWOv7"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652695182423	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5bWOv7/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:39411/devtools/browser/7f16135a-1728-434a-9de7-3319a6234057
+1652695189886	Marionette	INFO	Listening on port 37255
+1652695190002	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652695209685	geckodriver	INFO	Listening on 127.0.0.1:47735
+1652695209695	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43363" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefAQyYc"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652695211025	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilefAQyYc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43363/devtools/browser/8f1b5ad3-aa3f-4054-9bc4-6cae1ac1551f
+1652695218209	Marionette	INFO	Listening on port 45731
+1652695218332	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 56: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 56: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+1652695263998	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 56: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 56: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+1652705107841	geckodriver	INFO	Listening on 127.0.0.1:37315
+1652705108351	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59623" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletlAfcs"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652705111679	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletlAfcs/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59623/devtools/browser/619b8846-93f2-45df-a733-1a8a14ad9fdc
+1652705118630	Marionette	INFO	Listening on port 36755
+1652705118765	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=57, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=58, line 1: SyntaxError: expected expression, got '<'
+1652705138723	geckodriver	INFO	Listening on 127.0.0.1:39597
+1652705138732	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57451" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVXZZ68"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652705141060	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVXZZ68/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57451/devtools/browser/3d35bc28-ea09-41ff-8f7e-9a39b969e4e2
+1652705152729	Marionette	INFO	Listening on port 40683
+1652705152929	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 56: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+JavaScript error: , line 0: uncaught exception: undefined

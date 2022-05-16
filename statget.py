@@ -5,11 +5,12 @@ import warnings
 warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
 import time
+from bs4 import BeautifulSoup
 #----------------------------------------------------------------
 t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
 v_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[3]/div/div[1]/div[1]/div/div[1]/span[2]'
-s_xp = '/html/body/app-root/div/div[2]/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
+s_xp = '//*[@id="swiperContainer"]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
 # xpaths keep changing, if bot is broken, update xpaths
 #----------------------------------------------------------------
 def stat_check(url):
@@ -33,7 +34,7 @@ def stat_check(url):
 	url_TR = 'https://trials.report/report/2/' + url
 	#maybe try requests instead of selenium for s KD
 	driver.get(url_TR)
-	time.sleep(10)
+	time.sleep(15)
 	skd = driver.find_element(By.XPATH, s_xp).text
 	kdarr = [skd, tkd, ckd, vkd]
 	print(kdarr)
@@ -59,8 +60,14 @@ def stat_check_(url):
 	url_TR = 'https://trials.report/report/2/' + url
 	#maybe try requests instead of selenium for s KD
 	driver.get(url_TR)
-	time.sleep(45)
-	skd = driver.find_element(By.XPATH, s_xp).text
+	time.sleep(30)
+	#skd = driver.find_element(By.XPATH, s_xp).text
+	html = driver.page_source
+	soup = BeautifulSoup(html, "html.parser")
+	all_divs = soup.find('div', {'id' : 'nameSearch'})
+	stats = all_divs.find_all('stat__number')
+	for i in stats:
+		print(i)
 	kdarr = [skd, tkd, ckd, vkd]
 	print(kdarr)
 	return kdarr

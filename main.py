@@ -19,26 +19,24 @@ def usr_add(usr):
 	file.close()
 
 def stat_add_one(name, url):
-	n = open("DiscNameT.txt", 'a')
-	n.write(name)
-	n.close()
-	u = open("D2TpageT.txt", 'a')
-	url = url + '\n'
-	u.write(url)
-	u.close
 	arr_s = statget.stat_check(url)
 	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
-	
 
 def get_ratings_all():
-	n = arr_load(open('DiscNameT.txt', 'r', encoding='utf-8'))
-	u = arr_load(open('D2TpageT.txt', 'r', encoding='utf-8'))
-	for url in u:
-		ind = u.index(url)
+	statcsv = open("stats.csv", mode='r', encoding = "utf-8")
+	arr = csv.reader(statcsv)
+	urls = []
+	names = []
+	for row in arr:
+		names.append(row[0])
+		urls.append(row[1])
+	statcsv.close()
+	for url in urls:
+		ind = urls.index(url)
 		arr_s = statget.stat_check(url)
-		arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
 		print(arr_usr)
@@ -121,13 +119,8 @@ async def lobby(ctx, arg):
 		for team in team_gen.team_create():
 			await ctx.reply(f"team {str(team_num)}:\n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
 			team_num += 1
-@bot.command()
-async def statupdate(ctx):
-    print('doing the big boi command')
-    get_ratings_all()
-@bot.command()
-async def statupdatelong(ctx):
-    print('doing the big boi command')
-    statgetlong.longupdate()
 #---------------------
-bot.run(TOKEN)
+#bot.run(TOKEN)
+#get_ratings_all()
+#statgetlong.longupdate()
+statgetlong.longupdate()
