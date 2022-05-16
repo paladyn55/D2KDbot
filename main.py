@@ -7,7 +7,6 @@
 from discord.ext import commands
 import os
 import statget
-import statgetlong
 import csv
 import team_gen
 lobby_inst = False
@@ -19,7 +18,7 @@ def usr_add(usr):
 	file.close()
 
 def stat_add_one(name, url):
-	arr_s = statget.stat_check(url)
+	arr_s = statget.stat_check(url, 10, 40)
 	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
@@ -35,7 +34,7 @@ def get_ratings_all():
 	statcsv.close()
 	for url in urls:
 		ind = urls.index(url)
-		arr_s = statget.stat_check(url)
+		arr_s = statget.stat_check(url, 5, 30)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
@@ -123,4 +122,3 @@ async def lobby(ctx, arg):
 #bot.run(TOKEN)
 #get_ratings_all()
 #statgetlong.longupdate()
-statgetlong.longupdate()
