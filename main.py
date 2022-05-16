@@ -34,11 +34,12 @@ def get_ratings_all():
 	statcsv.close()
 	for url in urls:
 		ind = urls.index(url)
-		arr_s = statget.stat_check(url, 5, 30)
+		arr_s = statget.stat_check(url, 5, 10)
+		print(arr_s)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+		print(arr_usr)
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
-		print(arr_usr)
 		arr_usr[0].remove("\n")
 		usr_add(arr_usr)
 	c1 = open("stats.csv", mode='w', encoding='utf-8')
@@ -62,7 +63,7 @@ def in_check(csv_o, str):
 	return in_tr
 	
 #replit
-TOKEN = os.environ["TOKEN"]
+#TOKEN = os.environ["TOKEN"]
 #VSC
 #path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
 #T = open(path, 'r')
@@ -120,5 +121,5 @@ async def lobby(ctx, arg):
 			team_num += 1
 #---------------------
 #bot.run(TOKEN)
-#get_ratings_all()
+get_ratings_all()
 #statgetlong.longupdate()

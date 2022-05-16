@@ -5,7 +5,7 @@ import warnings
 warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
 import time
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 #----------------------------------------------------------------
 t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
