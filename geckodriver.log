@@ -1054,3 +1054,21 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:43341/devtools/browser/6a4333a2-dd1f-4bd3-84bb-7629ac6827fd
 1652582587272	Marionette	INFO	Listening on port 37361
 1652582587464	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652690445738	geckodriver	INFO	Listening on 127.0.0.1:55439
+1652690446245	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "57735" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileanaWOB"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652690449864	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileanaWOB/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57735/devtools/browser/14c8ae3f-4e74-4bdb-9a27-5c1f7f43ac45
+1652690456623	Marionette	INFO	Listening on port 43305
+1652690456745	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652690996488	geckodriver	INFO	Listening on 127.0.0.1:37273
+1652690996524	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "36279" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilewD1QlJ"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652690997735	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilewD1QlJ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:36279/devtools/browser/b4aa1734-b88c-43cc-9a42-f3f4c805eb6f
+1652691003516	Marionette	INFO	Listening on port 46339
+1652691003546	Marionette	WARN	TLS certificate errors will be ignored for this session

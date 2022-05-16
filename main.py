@@ -6,7 +6,8 @@
 #statupdate - updates stat values for every member
 from discord.ext import commands
 import os
-import statgetse
+import statget
+import statgetlong
 import csv
 import team_gen
 lobby_inst = False
@@ -25,7 +26,7 @@ def stat_add_one(name, url):
 	url = url + '\n'
 	u.write(url)
 	u.close
-	arr_s = statgetse.stat_check(url)
+	arr_s = statget.stat_check(url)
 	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
@@ -36,7 +37,7 @@ def get_ratings_all():
 	u = arr_load(open('D2TpageT.txt', 'r', encoding='utf-8'))
 	for url in u:
 		ind = u.index(url)
-		arr_s = statgetse.stat_check(url)
+		arr_s = statget.stat_check(url)
 		arr_usr = [n[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
@@ -124,5 +125,9 @@ async def lobby(ctx, arg):
 async def statupdate(ctx):
     print('doing the big boi command')
     get_ratings_all()
+@bot.command()
+async def statupdatelong(ctx):
+    print('doing the big boi command')
+    statgetlong.longupdate()
 #---------------------
 bot.run(TOKEN)
