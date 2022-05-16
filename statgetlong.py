@@ -7,6 +7,7 @@ def arr_load(file):
 	return arr
 	
 def longupdate():
+	arr_ret = []
 	n = arr_load(open('DiscNameT.txt', 'r', encoding='utf-8'))
 	u = arr_load(open('D2TpageT.txt', 'r', encoding='utf-8'))
 	for url in u:
@@ -17,5 +18,6 @@ def longupdate():
 		arr_usr.append(st_n)
 		print(arr_usr)
 		arr_usr[0].remove("\n")
-		print(arr_usr)
+		arr_ret.append(arr_usr)
+	print(arr_ret)
 		
