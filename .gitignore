@@ -3,4 +3,4 @@ poetry.lock
 geckodriver.log
 .breakpoints
 .replit
-__pycache_/
+__pycache__/
