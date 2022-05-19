@@ -1,6 +1,7 @@
 from selenium import webdriver
+import os
 from webdriver_manager.firefox import GeckoDriverManager
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), service_log_path=os.devnull)
 import warnings
 warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
