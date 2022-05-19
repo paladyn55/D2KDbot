@@ -24,6 +24,7 @@ def stat_add_one(name, url):
 	arr_usr.append(st_n)
 
 def get_ratings_all(len):
+	print("running get_ratings all (updating all stats)")
 	statcsv = open("stats.csv", mode='r', encoding = "utf-8")
 	arr = csv.reader(statcsv)
 	urls = []
@@ -40,10 +41,10 @@ def get_ratings_all(len):
 			arr_s = statget.stat_check(url, 20, 40)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		print(f"{str(arr_usr[2])} {str(arr_usr[3])}  {str(arr_usr[4])} {str(arr_usr[5])}")
-		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
+		st_n = (float(arr_usr[2]) + float(arr_usr[3]) + float(arr_usr[4]) + float(arr_usr[5]))
 		arr_usr.append(st_n)
 		print(arr_usr)
-		arr_usr[0].remove("\n")
+		arr_usr[0].strip("\n")
 		usr_add(arr_usr)
 	c1 = open("stats.csv", mode='w', encoding='utf-8')
 	c2 = open("stattemp.csv", mode='r', encoding="utf-8")
