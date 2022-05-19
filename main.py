@@ -134,4 +134,3 @@ async def lobby(ctx, arg):
 #get_ratings_all(1)
 #replit:
 get_ratings_all(2)
-#statgetlong.longupdate()
