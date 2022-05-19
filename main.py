@@ -6,7 +6,8 @@
 #statupdate - updates stat values for every member
 from discord.ext import commands
 import os
-import statget
+import api_get
+import se_get
 import csv
 import team_gen
 lobby_inst = False
@@ -18,7 +19,7 @@ def usr_add(usr):
 	file.close()
 
 def stat_add_one(name, url):
-	arr_s = statget.stat_check(url, 10, 40)
+	arr_s = se_get.stat_check(url, 10, 40)
 	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
@@ -37,9 +38,9 @@ def get_ratings_all(len):
 	for url in urls:
 		ind = urls.index(url)
 		if len == 1:
-			arr_s = statget.stat_check(url, 5, 15)
+			arr_s = se_get.stat_check(url, 5, 15)
 		elif len == 2:
-			arr_s = statget.stat_check(url, 20, 40)
+			arr_s = se_get.stat_check(url, 20, 40)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		print(f"{str(arr_usr[2])} {str(arr_usr[3])}  {str(arr_usr[4])} {str(arr_usr[5])}")
 		st_n = (float(arr_usr[2]) + float(arr_usr[3]) + float(arr_usr[4]) + float(arr_usr[5]))
@@ -133,4 +134,5 @@ async def lobby(ctx, arg):
 #VSC
 #get_ratings_all(1)
 #replit:
-get_ratings_all(2)
+#get_ratings_all(2)
+api_get.stat_get("4611686018478013482", "2")
