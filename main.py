@@ -23,7 +23,8 @@ def stat_add_one(name, url):
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
 
-def get_ratings_all():
+def get_ratings_all(len):
+	print("running get_ratings all (updating all stats)")
 	statcsv = open("stats.csv", mode='r', encoding = "utf-8")
 	arr = csv.reader(statcsv)
 	urls = []
@@ -32,8 +33,10 @@ def get_ratings_all():
 		names.append(row[0])
 		urls.append(row[1])
 	statcsv.close()
+	bigarray = []
 	for url in urls:
 		ind = urls.index(url)
+<<<<<<< HEAD
 		arr_s = statget.stat_check(url, 5, 10)
 		print(arr_s)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
@@ -41,7 +44,23 @@ def get_ratings_all():
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
 		arr_usr[0].remove("\n")
+=======
+		if len == 1:
+			arr_s = statget.stat_check(url, 5, 15)
+		elif len == 2:
+			arr_s = statget.stat_check(url, 20, 40)
+		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
+		print(f"{str(arr_usr[2])} {str(arr_usr[3])}  {str(arr_usr[4])} {str(arr_usr[5])}")
+		st_n = (float(arr_usr[2]) + float(arr_usr[3]) + float(arr_usr[4]) + float(arr_usr[5]))
+		arr_usr.append(st_n)
+		print(arr_usr)
+		arr_usr[0].strip("\n")
+>>>>>>> 3e01ad94e6ebb5787c36a9ed037e8c68737b20f3
 		usr_add(arr_usr)
+		bigarray.append(arr_usr)
+	t_file = open("temp_store_file.txt", "w")
+	for usr in bigarray:
+		t_file.writeline(usr)
 	c1 = open("stats.csv", mode='w', encoding='utf-8')
 	c2 = open("stattemp.csv", mode='r', encoding="utf-8")
 	w = csv.writer(c1, delimiter=',')
@@ -121,5 +140,12 @@ async def lobby(ctx, arg):
 			team_num += 1
 #---------------------
 #bot.run(TOKEN)
+<<<<<<< HEAD
 get_ratings_all()
 #statgetlong.longupdate()
+=======
+#VSC
+#get_ratings_all(1)
+#replit:
+get_ratings_all(2)
+>>>>>>> 3e01ad94e6ebb5787c36a9ed037e8c68737b20f3

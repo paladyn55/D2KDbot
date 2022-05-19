@@ -1,0 +1,6 @@
+pyproject.toml
+poetry.lock
+geckodriver.log
+.breakpoints
+.replit
+__pycache__/

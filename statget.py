@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
@@ -6,14 +7,25 @@ warnings.filterwarnings('ignore')
 from selenium.webdriver.common.by import By
 import time
 #from bs4 import BeautifulSoup
+=======
+>>>>>>> 3e01ad94e6ebb5787c36a9ed037e8c68737b20f3
 #----------------------------------------------------------------
-t_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
-c_xp = '//*[@id="app"]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
+t_xp = '/html/body/div/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
+c_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
 v_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[3]/div/div[1]/div[1]/div/div[1]/span[2]'
-s_xp = '//*[@id="swiperContainer"]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
+s_xp = '/html/body/app-root/div/div/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
 # xpaths keep changing, if bot is broken, update xpaths
 #----------------------------------------------------------------
 def stat_check(url, w1, w2):
+	from selenium import webdriver
+	import os
+	from selenium.webdriver.firefox.options import Options
+	from webdriver_manager.firefox import GeckoDriverManager
+	options = Options()
+	options.headless = True
+	driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), service_log_path=os.devnull, options=options)
+	from selenium.webdriver.common.by import By
+	import time
 	global t_xp
 	global c_xp
 	global v_xp
@@ -36,6 +48,7 @@ def stat_check(url, w1, w2):
 	driver.get(url_TR)
 	time.sleep(w2)
 	skd = driver.find_element(By.XPATH, s_xp).text
-	kdarr = [skd, tkd, ckd, vkd]
+	kdarr = [tkd, ckd, vkd, skd]
 	print(kdarr)
 	return kdarr
+	driver.quit()
