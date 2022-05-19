@@ -1186,3 +1186,33 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:47155/devtools/browser/79d89ef0-7e8f-4a5b-845e-5cbfb066a265
 1652708552115	Marionette	INFO	Listening on port 41029
 1652708552324	Marionette	WARN	TLS certificate errors will be ignored for this session
+1652871780207	geckodriver	INFO	Listening on 127.0.0.1:60545
+1652871780765	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "39407" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileJQ7yoS"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652871784977	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJQ7yoS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:39407/devtools/browser/aeb1dcbe-0ca8-4b75-8606-95570e41cc90
+1652871793259	Marionette	INFO	Listening on port 41835
+1652871793364	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=57, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=58, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+1652871841917	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript error: , line 0: uncaught exception: undefined
+JavaScript error: https://b8e209f9883855908956c5e1a9784d28.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 13: ReferenceError: googqscp is not defined
+JavaScript error: https://b8e209f9883855908956c5e1a9784d28.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 13: ReferenceError: googqscp is not defined
+1652954898268	geckodriver	INFO	Listening on 127.0.0.1:34551
+1652954898341	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "43715" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileB4RI2y"
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: No GPUs detected via PCI
+1652954902909	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileB4RI2y/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:43715/devtools/browser/efae6f86-3623-40d3-82aa-8c4c7ddc8b26
+1652954910272	Marionette	INFO	Listening on port 41369
+1652954910406	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=57, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://server.cpmstar.com/tag.aspx?a=0_0176D4A8&group=58, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.
+JavaScript error: https://8742ef52dcc2c0be2c79b60189486c2e.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html, line 13: ReferenceError: buildAttribution is not defined
+JavaScript error: https://eus.rubiconproject.com/usync.js, line 4: SecurityError: The operation is insecure.

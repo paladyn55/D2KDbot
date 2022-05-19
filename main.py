@@ -23,7 +23,7 @@ def stat_add_one(name, url):
 	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
 	arr_usr.append(st_n)
 
-def get_ratings_all():
+def get_ratings_all(len):
 	statcsv = open("stats.csv", mode='r', encoding = "utf-8")
 	arr = csv.reader(statcsv)
 	urls = []
@@ -34,7 +34,10 @@ def get_ratings_all():
 	statcsv.close()
 	for url in urls:
 		ind = urls.index(url)
-		arr_s = statget.stat_check(url, 5, 30)
+		if len == 1:
+			arr_s = statget.stat_check(url, 5, 15)
+		elif len == 2:
+			arr_s = statget.stat_check(url, 20, 40)
 		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
 		st_n = (arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5])/4
 		arr_usr.append(st_n)
@@ -120,5 +123,8 @@ async def lobby(ctx, arg):
 			team_num += 1
 #---------------------
 #bot.run(TOKEN)
-#get_ratings_all()
+#VSC
+#get_ratings_all(1)
+#replit:
+get_ratings_all(2)
 #statgetlong.longupdate()
