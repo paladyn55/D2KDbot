@@ -33,6 +33,7 @@ def get_ratings_all(len):
 		names.append(row[0])
 		urls.append(row[1])
 	statcsv.close()
+	bigarray = []
 	for url in urls:
 		ind = urls.index(url)
 		if len == 1:
@@ -46,6 +47,10 @@ def get_ratings_all(len):
 		print(arr_usr)
 		arr_usr[0].strip("\n")
 		usr_add(arr_usr)
+		bigarray.append(arr_usr)
+	t_file = open("temp_store_file.txt", "w")
+	for usr in bigarray:
+		t_file.writeline(usr)
 	c1 = open("stats.csv", mode='w', encoding='utf-8')
 	c2 = open("stattemp.csv", mode='r', encoding="utf-8")
 	w = csv.writer(c1, delimiter=',')
