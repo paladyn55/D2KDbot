@@ -5,7 +5,7 @@ v_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div
 s_xp = '/html/body/app-root/div/div/app-report/div[1]/div[2]/div/div[1]/app-player/div/div/div/div/div[1]/app-player-main-stats/div/div[2]/div/div[4]/div/div[1]'
 # xpaths keep changing, if bot is broken, update xpaths
 #----------------------------------------------------------------
-def stat_check(url, w1, w2):
+def stat_get(url, w1, w2):
 	from selenium import webdriver
 	import os
 	from selenium.webdriver.firefox.options import Options
