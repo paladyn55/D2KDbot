@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-import warnings
-warnings.filterwarnings('ignore')
-from selenium.webdriver.common.by import By
-import time
-#from bs4 import BeautifulSoup
-=======
->>>>>>> 3e01ad94e6ebb5787c36a9ed037e8c68737b20f3
 #----------------------------------------------------------------
 t_xp = '/html/body/div/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
