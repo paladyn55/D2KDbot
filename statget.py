@@ -1,12 +1,12 @@
 from selenium import webdriver
 import os
+from selenium.webdriver.firefox.options import Options
 from webdriver_manager.firefox import GeckoDriverManager
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), service_log_path=os.devnull)
-import warnings
-warnings.filterwarnings('ignore')
+options = Options()
+options.headless = True
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), service_log_path=os.devnull, options=options)
 from selenium.webdriver.common.by import By
 import time
-from bs4 import BeautifulSoup
 #----------------------------------------------------------------
 t_xp = '/html/body/div/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div/div[1]/span[2]'
 c_xp = '/html/body/div[1]/div[2]/div[2]/div/main/div[2]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/span[2]'
@@ -37,6 +37,6 @@ def stat_check(url, w1, w2):
 	driver.get(url_TR)
 	time.sleep(w2)
 	skd = driver.find_element(By.XPATH, s_xp).text
-	kdarr = [skd, tkd, ckd, vkd]
+	kdarr = [tkd, ckd, vkd, skd]
 	print(kdarr)
 	return kdarr
