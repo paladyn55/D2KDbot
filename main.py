@@ -102,11 +102,14 @@ async def register(ctx, arg):
 @bot.command()
 async def lobby(ctx, arg):
 	global lobby_inst
-	if str(arg) == "start":
+
+	input = arg.split(" ")
+
+	if str(input[0]) == "start":
 		print(str(ctx.author) + " started a lobby")
 		lobby_inst = True
 		await ctx.reply("lobby started")
-	if str(arg) == "join":
+	if str(input[0]) == "join":
 		if lobby_inst == True:
 			c = open('stats.csv', 'r')
 			cr = csv.reader(c)
@@ -120,14 +123,14 @@ async def lobby(ctx, arg):
 					print(str(ctx.author) + "joined the lobby")
 				else:
 					await ctx.reply("user has already joined the lobby")
-	if str(arg) == 'end':
+	if str(input[0]) == 'end':
 		a = open("lobby.txt", "w")
 		a.close()
 		lobby_inst = False
 		await ctx.reply("lobby closed")
-	if str(arg) == "teamgen":
+	if str(input[0]) == "teamgen":
 		team_num = 1
-		for team in team_gen.team_create():
+		for team in team_gen.team_create(input[1]):
 			await ctx.reply(f"team {str(team_num)}:\n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
 			team_num += 1
 #---------------------
