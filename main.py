@@ -10,6 +10,7 @@ import api_get
 import se_get
 import csv
 import team_gen
+import getPlayerStats
 lobby_inst = False
 
 def usr_add(usr):
@@ -135,4 +136,5 @@ async def lobby(ctx, arg):
 #get_ratings_all(1)
 #replit:
 #get_ratings_all(2)
-api_get.stat_get("4611686018478013482", "2")
+#api_get.stat_get("4611686018478013482", "2")
+getPlayerStats.stat_get()
