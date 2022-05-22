@@ -11,6 +11,7 @@ import se_get
 import csv
 import team_gen
 import getPlayerStats
+import bungie_name_get
 lobby_inst = False
 
 def usr_add(usr):
@@ -140,4 +141,5 @@ async def lobby(ctx, arg):
 #replit:
 #get_ratings_all(2)
 #api_get.stat_get("4611686018478013482", "2")
-getPlayerStats.stat_get()
+#getPlayerStats.stat_get()
+bungie_name_get.run()
