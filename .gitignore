@@ -4,3 +4,4 @@ geckodriver.log
 .breakpoints
 .replit
 __pycache__/
+.idea/
