@@ -55,7 +55,7 @@ def stat_get(bungieName, b_num):
     #averageEfficiency = (controlEfficiency + clashEfficiency + trialsEfficiency) / 3
     #averageCR = (controCR + clashCR + trialsCR) / 3
 
-    print("Average KD:", averageKD)
+    #print("Average KD:", averageKD)
     # print("Average Efficiency:", averageEfficiency)
     # print("Average CR:", averageCR)
     return averageKD
