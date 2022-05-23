@@ -7,9 +7,8 @@
 from discord.ext import commands
 import os
 import csv
-import team_gen
+import team_sort
 import getPlayerStats
-import snake_draft
 lobby_inst = False
 
 def usr_add(usr):
@@ -39,11 +38,7 @@ def in_check(csv_o, str):
 			in_tr = 1
 	return in_tr
 	
-#replit
-#VSC
-#path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
-#T = open(path, 'r')
-#print(T)
+TOKEN = os.environ['TOKEN']
 prefix = "&"
 bot = commands.Bot(prefix)
 
@@ -102,16 +97,16 @@ async def lobby(ctx, arg):
 		await ctx.reply("lobby closed")
 	
 @bot.command()
-def teamgen(ctx, arg):
+async def teamgen(ctx, arg):
 	if str(input[0]) == "teamgen":
 		l = open("lobby.txt", 'r')
-		for team in snake_draft.snake_draft(snake_draft.sort(arr_load(l)), ctx):
+		for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), ctx):
 			await ctx.reply(f"team: {team}")
 #---------------------
-#bot.run(TOKEN)
+bot.run(TOKEN)
 
-c = open('names.csv', 'r', encoding='utf-8')
-csv_o = csv.reader(c)
-usr_arr = csv_arr(csv_o)
-for usr in usr_arr:
-	print(getPlayerStats.stat_get(usr[1], usr[2]))
+#c = open('names.csv', 'r', encoding='utf-8')
+#csv_o = csv.reader(c)
+#usr_arr = csv_arr(csv_o)
+#for usr in usr_arr:
+#	print(getPlayerStats.stat_get(usr[1], usr[2]))
