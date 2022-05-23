@@ -8,6 +8,7 @@ from discord.ext import commands
 import os
 import csv
 import team_sort
+import team_gen
 import getPlayerStats
 lobby_inst = False
 
@@ -101,19 +102,15 @@ async def lobby(ctx, arg):
 		await ctx.reply("lobby closed")
 	
 @bot.command()
-async def teamgen(ctx, arg):
-	print(arg)
-	await ctx.reply('working')
+async def teamgen(ctx):
+	#print(arg)
 	global lobby_inst
 	if lobby_inst == True:
-		await ctx.reply('still working')
-		l = open("lobby.txt", 'r')
-		await ctx.reply('still working')
-		for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), int(arg)):
+		#for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), int(arg)):
+		for team in team_gen.teamgen():	
 			await ctx.reply(f"team: {team}")
 #---------------------
 bot.run(TOKEN)
-
 #c = open('names.csv', 'r', encoding='utf-8')
 #csv_o = csv.reader(c)
 #usr_arr = csv_arr(csv_o)
