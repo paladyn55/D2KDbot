@@ -12,11 +12,7 @@ import team_gen
 import getPlayerStats
 lobby_inst = False
 
-def usr_add(usr):
-	file = open('stattemp.csv', mode='a', encoding='utf-8')
-	writer = csv.writer(file, delimiter=',')
-	writer.writerow(usr)
-	file.close()
+
 
 # make register function
 
@@ -47,25 +43,25 @@ bot = commands.Bot(prefix)
 async def on_ready():
   print("------- Bot is ready -------")
 
-@bot.command()
+#add register command
+@bot.command
 async def register(ctx, arg):
-	usrs = open("players.txt", 'r')
-	list_player = []
-	for i in usrs:
-		list_player.append(i)
+	#append to names csv
+	f = open('names.csv',mode='r',encoding='utf-8')
+	csv_o = csv.reader(f)
+	usr_arr = csv_arr(csv_o)
 	check = 0
-	for i in list_player:
-		if i[0] == str(ctx.author):
+	for line in usr_arr:
+		if line[0] == str(ctx.author):
 			check = 1
-	
-	if check == 1:
-		usrs.close()
-		#register function
-		await ctx.reply("registered")
-		print(str(ctx.author) + " registered")
-	else:
-		await ctx.reply("already registered")
-		usrs.close()
+	if check == 0:
+		f.close
+		f = open('names.csv',mode='a',encoding='utf-8')
+		cw = csv.writer(f)
+		usr = str(ctx.author)
+		b_name, b_num = arg.split('#')
+		usr_t = [usr, b_name, b_num]
+		cw.writerow(usr_t)
 
 @bot.command()
 async def lobby(ctx, arg):
@@ -107,8 +103,10 @@ async def teamgen(ctx):
 	global lobby_inst
 	if lobby_inst == True:
 		#for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), int(arg)):
-		for team in team_gen.teamgen():	
-			await ctx.reply(f"team: {team}")
+		num = 1
+		for team in team_gen.teamgen():
+			await ctx.reply(f"team {num}: \n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
+			num += 1
 #---------------------
 bot.run(TOKEN)
 #c = open('names.csv', 'r', encoding='utf-8')

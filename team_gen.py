@@ -18,6 +18,19 @@ def invert_array(array):
     inverted.append(array.pop())
   return inverted
 
+def snake_draft(ordered_players, people_per_team):
+    number_teams = len(ordered_players)//people_per_team
+    teams = []
+    for _ in range(number_teams):
+        teams.append([])
+    
+    while len(ordered_players) > 0:
+        for team in teams:
+            team.append(ordered_players.pop(0))
+        teams = invert_array(teams)
+    
+    return teams
+
 
 def teamgen():
 	import getPlayerStats
@@ -37,17 +50,5 @@ def teamgen():
 		for usr in b_name_lobby:
 			usr.append(getPlayerStats.stat_get(usr[1], usr[2]))
 		ordered_players = sorted(b_name_lobby,key=lambda l:l[3], reverse=False)
-
-    teams = []
-    number_teams = 3
-		for _ in range(number_teams):
-        teams.append([])
-    
-    while len(ordered_players) > 0:
-        for team in teams:
-            team.append(ordered_players.pop(0))
-        teams = invert_array(teams)
-    
-    return teams
-			
-		
+		return snake_draft(ordered_players, 3)
+  
