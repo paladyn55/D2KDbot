@@ -1,19 +1,18 @@
-def stat_get(b_name, b_num):
+def stat_get(bungieName, b_num):
 	import requests
 #the first area is just to get bungie ID and platform from bungie name	
 	# dictionary to hold extra headers
 	HEADERS = {"X-API-Key": "898ee44d41714955909f5b4929cfd45a"}
 #	
-	bungieName = b_name
-	nameData = b_num.split("#")
+	bungieNum = b_num.strip("#")
 #	
 	names = requests.post("https://www.bungie.net/platform/User/Search/GlobalName/0", "",
-	                      {"displayNamePrefix": nameData[0]}, headers=HEADERS)
+	                      {"displayNamePrefix": bungieName}, headers=HEADERS)
 	
 	response = names.json()
 	
 	for user in response["Response"]["searchResults"]:
-	    if user["bungieGlobalDisplayNameCode"] == int(nameData[1]):
+	    if user["bungieGlobalDisplayNameCode"] == int(bungieNum):
 	        membershipType = str(user["destinyMemberships"][0]["crossSaveOverride"])
 	        membershipId = user["destinyMemberships"][0]["membershipId"]
 #--------------------------------------------------------------------------------------------------	
@@ -42,6 +41,6 @@ def stat_get(b_name, b_num):
 	averageCR = (controCR + clashCR + trialsCR)/3
 	
 	print("Average KD:", averageKD)
-	print("Average Efficiency:", averageEfficiency)
-	print("Average CR:", averageCR)
+	#print("Average Efficiency:", averageEfficiency)
+	#print("Average CR:", averageCR)
 	return averageKD

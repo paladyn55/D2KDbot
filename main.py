@@ -10,7 +10,6 @@ import api_get
 import csv
 import team_gen
 import getPlayerStats
-import nameupdate
 lobby_inst = False
 
 def usr_add(usr):
@@ -26,6 +25,12 @@ def arr_load(file):
 	for line in file:
 		arr.append(line)
 	return arr
+
+def csv_arr(csv_o):
+  arr = []
+  for row in csv_o:
+    arr.append(row)
+  return arr
 
 def in_check(csv_o, str):
 	in_tr = 0
@@ -109,4 +114,8 @@ async def lobby(ctx, arg):
 #get_ratings_all(2)
 #api_get.stat_get("4611686018478013482", "2")
 #getPlayerStats.stat_get()
-nameupdate.run()
+c = open('new.csv', 'r', encoding='utf-8')
+csv_o = csv.reader(c)
+usr_arr = csv_arr(csv_o)
+for usr in usr_arr:
+	getPlayerStats.stat_get(usr[1], usr[2])
