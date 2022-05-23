@@ -15,6 +15,9 @@ def stat_get(bungieName, b_num):
 	    if user["bungieGlobalDisplayNameCode"] == int(bungieNum):
 	        membershipType = str(user["destinyMemberships"][0]["crossSaveOverride"])
 	        membershipId = user["destinyMemberships"][0]["membershipId"]
+		if membershipType == "0":
+			str(user["destinyMemberships"][0]["membershipType"])
+
 #--------------------------------------------------------------------------------------------------
 	stats = requests.get(
 	    "https://www.bungie.net/platform/Destiny2/"+membershipType+"/Account/"+membershipId+"/Character/0/Stats/?groups=General&modes=10,12,37,84",
