@@ -15,7 +15,7 @@ def stat_get(bungieName, b_num):
         for user in response["Response"]["searchResults"]:
             if user["bungieGlobalDisplayNameCode"] == int(bungieNum):
                 userFound = True
-                print(user)
+                #print(user)
                 membershipType = str(user["destinyMemberships"][0]["crossSaveOverride"])
                 membershipId = user["destinyMemberships"][0]["membershipId"]
                 if membershipType == "0":
@@ -36,24 +36,24 @@ def stat_get(bungieName, b_num):
 
     if (characterStats["control"]):
         controlKD = characterStats["control"]["allTime"]["killsDeathsRatio"]["basic"]["value"]
-        controlKillVolume = characterStats["control"]["allTime"]["kills"]["pga"]["value"]
-        controlEfficiency = characterStats["control"]["allTime"]["efficiency"]["basic"]["value"]
-        controCR = characterStats["control"]["allTime"]["combatRating"]["basic"]["value"]
+        #controlKillVolume = characterStats["control"]["allTime"]["kills"]["pga"]["value"]
+        #controlEfficiency = characterStats["control"]["allTime"]["efficiency"]["basic"]["value"]
+        #controlCR = characterStats["control"]["allTime"]["combatRating"]["basic"]["value"]
 
     if(characterStats["clash"]):
         clashKD = characterStats["clash"]["allTime"]["killsDeathsRatio"]["basic"]["value"]
-        clashKillVolume = characterStats["control"]["allTime"]["kills"]["pga"]["value"]
-        clashEfficiency = characterStats["clash"]["allTime"]["efficiency"]["basic"]["value"]
-        clashCR = characterStats["clash"]["allTime"]["combatRating"]["basic"]["value"]
+        #clashKillVolume = characterStats["control"]["allTime"]["kills"]["pga"]["value"]
+        #clashEfficiency = characterStats["clash"]["allTime"]["efficiency"]["basic"]["value"]
+        #clashCR = characterStats["clash"]["allTime"]["combatRating"]["basic"]["value"]
 
     if(characterStats["trials_of_osiris"]):
         trialsKD = characterStats["trials_of_osiris"]["allTime"]["killsDeathsRatio"]["basic"]["value"]
-        trialsEfficiency = characterStats["trials_of_osiris"]["allTime"]["efficiency"]["basic"]["value"]
-        trialsCR = characterStats["trials_of_osiris"]["allTime"]["combatRating"]["basic"]["value"]
+        #trialsEfficiency = characterStats["trials_of_osiris"]["allTime"]["efficiency"]["basic"]["value"]
+        #trialsCR = characterStats["trials_of_osiris"]["allTime"]["combatRating"]["basic"]["value"]
 
     averageKD = (controlKD + clashKD + trialsKD) / 3
     #averageEfficiency = (controlEfficiency + clashEfficiency + trialsEfficiency) / 3
-    #averageCR = (controCR + clashCR + trialsCR) / 3
+    #averageCR = (controlCR + clashCR + trialsCR) / 3
 
     #print("Average KD:", averageKD)
     # print("Average Efficiency:", averageEfficiency)

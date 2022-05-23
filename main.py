@@ -6,10 +6,10 @@
 #statupdate - updates stat values for every member
 from discord.ext import commands
 import os
-import api_get
 import csv
 import team_gen
 import getPlayerStats
+import snake_draft
 lobby_inst = False
 
 def usr_add(usr):
@@ -100,21 +100,18 @@ async def lobby(ctx, arg):
 		a.close()
 		lobby_inst = False
 		await ctx.reply("lobby closed")
+	
+@bot.command()
+def teamgen(ctx, arg):
 	if str(input[0]) == "teamgen":
-		team_num = 1
-		for team in team_gen.team_create(input[1]):
-			await ctx.reply(f"team {str(team_num)}:\n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
-			team_num += 1
+		l = open("lobby.txt", 'r')
+		for team in snake_draft.snake_draft(snake_draft.sort(arr_load(l)), ctx):
+			await ctx.reply(f"team: {team}")
 #---------------------
 #bot.run(TOKEN)
-#VSC
-#get_ratings_all(1)
-#replit:
-#get_ratings_all(2)
-#api_get.stat_get("4611686018478013482", "2")
-#getPlayerStats.stat_get()
-c = open('new.csv', 'r', encoding='utf-8')
+
+c = open('names.csv', 'r', encoding='utf-8')
 csv_o = csv.reader(c)
 usr_arr = csv_arr(csv_o)
 for usr in usr_arr:
-	getPlayerStats.stat_get(usr[1], usr[2])
+	print(getPlayerStats.stat_get(usr[1], usr[2]))

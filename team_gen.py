@@ -24,9 +24,7 @@ def team_create(people_per_team):
 	if len(lobby)%3 != 0:
 		print("uneven number of players for teams of 3")
 	else:
-		c = open('statsT.csv', 'r', encoding='utf-8')
-		cr = csv.reader(c)
-		usr_arr_t = csv_arr(cr)
+		
 		arr_usrs = []
 		for usr in lobby:
 			for row in usr_arr_t:
