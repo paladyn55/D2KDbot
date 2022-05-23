@@ -7,11 +7,9 @@
 from discord.ext import commands
 import os
 import api_get
-import se_get
 import csv
 import team_gen
 import getPlayerStats
-import bungie_name_get
 lobby_inst = False
 
 def usr_add(usr):
@@ -20,52 +18,19 @@ def usr_add(usr):
 	writer.writerow(usr)
 	file.close()
 
-def stat_add_one(name, url):
-	arr_s = se_get.stat_check(url, 10, 40)
-	arr_usr = [name, url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
-	st_n = arr_usr[2] + arr_usr[3] + arr_usr[4] + arr_usr[5]
-	arr_usr.append(st_n)
-
-def get_ratings_all(len):
-	print("running get_ratings all (updating all stats)")
-	statcsv = open("stats.csv", mode='r', encoding = "utf-8")
-	arr = csv.reader(statcsv)
-	urls = []
-	names = []
-	for row in arr:
-		names.append(row[0])
-		urls.append(row[1])
-	statcsv.close()
-	bigarray = []
-	for url in urls:
-		ind = urls.index(url)
-		if len == 1:
-			arr_s = se_get.stat_check(url, 5, 15)
-		elif len == 2:
-			arr_s = se_get.stat_check(url, 20, 40)
-		arr_usr = [names[ind], url, arr_s[0], arr_s[1], arr_s[2], arr_s[3]]
-		print(f"{str(arr_usr[2])} {str(arr_usr[3])}  {str(arr_usr[4])} {str(arr_usr[5])}")
-		st_n = (float(arr_usr[2]) + float(arr_usr[3]) + float(arr_usr[4]) + float(arr_usr[5]))
-		arr_usr.append(st_n)
-		print(arr_usr)
-		arr_usr[0].strip("\n")
-		usr_add(arr_usr)
-		bigarray.append(arr_usr)
-	t_file = open("temp_store_file.txt", "w")
-	for usr in bigarray:
-		t_file.writeline(usr)
-	c1 = open("stats.csv", mode='w', encoding='utf-8')
-	c2 = open("stattemp.csv", mode='r', encoding="utf-8")
-	w = csv.writer(c1, delimiter=',')
-	r = csv.reader(c2)
-	for row in r:
-		w.writerow(row)
+# make register function
 
 def arr_load(file):
 	arr = []
 	for line in file:
 		arr.append(line)
 	return arr
+
+def csv_arr(csv_o):
+  arr = []
+  for row in csv_o:
+    arr.append(row)
+  return arr
 
 def in_check(csv_o, str):
 	in_tr = 0
@@ -75,7 +40,7 @@ def in_check(csv_o, str):
 	return in_tr
 	
 #replit
-#TOKEN = os.environ["TOKEN"]
+TOKEN = os.environ["TOKEN"]
 #VSC
 #path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
 #T = open(path, 'r')
@@ -89,16 +54,23 @@ async def on_ready():
 
 @bot.command()
 async def register(ctx, arg):
-	names = open("DiscNameT.txt", 'r')
-	usr = str(ctx.author) + '\n'
-	if usr not in names:
-		names.close()
-		stat_add_one(usr, arg)
+	usrs = open("players.txt", 'r')
+	list_player = []
+	for i in usrs:
+		list_player.append(i)
+	check = 0
+	for i in list_player:
+		if i[0] == str(ctx.author):
+			check = 1
+	
+	if check == 1:
+		usrs.close()
+		#register function
 		await ctx.reply("registered")
 		print(str(ctx.author) + " registered")
 	else:
 		await ctx.reply("already registered")
-		names.close()
+		usrs.close()
 
 @bot.command()
 async def lobby(ctx, arg):
@@ -142,4 +114,8 @@ async def lobby(ctx, arg):
 #get_ratings_all(2)
 #api_get.stat_get("4611686018478013482", "2")
 #getPlayerStats.stat_get()
-bungie_name_get.run()
+c = open('new.csv', 'r', encoding='utf-8')
+csv_o = csv.reader(c)
+usr_arr = csv_arr(csv_o)
+for usr in usr_arr:
+	getPlayerStats.stat_get(usr[1], usr[2])
