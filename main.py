@@ -40,7 +40,6 @@ def in_check(csv_o, str):
 	return in_tr
 	
 #replit
-TOKEN = os.environ["TOKEN"]
 #VSC
 #path = 'C:\\Users\\josep\\Documents\\TOKEN.txt'
 #T = open(path, 'r')
