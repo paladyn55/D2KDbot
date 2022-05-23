@@ -17,5 +17,5 @@ def snake_draft(ordered_players, people_per_team):
     
     return teams
 
-people = []
-snake_draft(people, 3)
+#people = []
+#snake_draft(people, 3)
