@@ -82,7 +82,11 @@ async def lobby(ctx, arg):
 			cr = csv.reader(c)
 			if in_check(cr, str(ctx.author)) == 1:
 				l = open("lobby.txt", 'r')
-				if str(ctx.author) in l:
+				i_check = 0
+				for line in l:
+					if line.strip('\n') == str(ctx.author):
+						i_check = 1
+				if i_check == 1:
 					lobby = open('lobby.txt', 'a')
 					lobby.write(str(ctx.author) + '\n')
 					lobby.close()
@@ -98,9 +102,14 @@ async def lobby(ctx, arg):
 	
 @bot.command()
 async def teamgen(ctx, arg):
-	if str(input[0]) == "teamgen":
+	print(arg)
+	await ctx.reply('working')
+	global lobby_inst
+	if lobby_inst == True:
+		await ctx.reply('still working')
 		l = open("lobby.txt", 'r')
-		for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), ctx):
+		await ctx.reply('still working')
+		for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), int(arg)):
 			await ctx.reply(f"team: {team}")
 #---------------------
 bot.run(TOKEN)
