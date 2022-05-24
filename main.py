@@ -43,6 +43,7 @@ async def register(ctx, arg):
 	usr_arr = csv_arr(csv_o)
 	check = 0
 	for line in usr_arr:
+		print(line)
 		if line[0] == str(ctx.author):
 			check = 1
 	if check == 0:
@@ -51,7 +52,7 @@ async def register(ctx, arg):
 		cw = csv.writer(f)
 		usr = str(ctx.author)
 		b_name, b_num = arg.split('#')
-		usr_t = [usr, b_name, b_num, "\n"]
+		usr_t = [usr, b_name, b_num]
 		cw.writerow(usr_t)
 		await ctx.reply('registered')
 	else:
