@@ -10,11 +10,7 @@ import csv
 import team_sort
 import team_gen
 import getPlayerStats
-lobby_inst = False
 
-
-
-# make register function
 
 def arr_load(file):
 	arr = []
@@ -63,35 +59,43 @@ async def register(ctx, arg):
 		usr_t = [usr, b_name, b_num]
 		cw.writerow(usr_t)
 
+lobby_arr = []
+lobby_inst = False
+
 @bot.command()
 async def lobby(ctx, arg):
 	global lobby_inst
-
-	input = arg.split(" ")
-
-	if str(input[0]) == "start":
+	global lobby_arr
+#---------------------------------------------------------------------
+	if arg == "start":
 		print(str(ctx.author) + " started a lobby")
 		lobby_inst = True
 		await ctx.reply("lobby started")
-	if str(input[0]) == "join":
+#---------------------------------------------------------------------
+	if arg == "join":
 		if lobby_inst == True:
-			c = open('stats.csv', 'r')
-			cr = csv.reader(c)
-			if in_check(cr, str(ctx.author)) == 1:
-				l = open("lobby.txt", 'r')
-				i_check = 0
-				for line in l:
-					if line.strip('\n') == str(ctx.author):
-						i_check = 1
-				if i_check == 1:
-					lobby = open('lobby.txt', 'a')
-					lobby.write(str(ctx.author) + '\n')
-					lobby.close()
-					await ctx.reply(str(ctx.author) + ' has joined the lobby')
-					print(str(ctx.author) + "joined the lobby")
-				else:
-					await ctx.reply("user has already joined the lobby")
-	if str(input[0]) == 'end':
+		
+			check = 0
+			for usr in lobby_arr:
+				if usr == str(ctx.author):
+					check = 1
+			if check == 0:
+				lobby_arr.append(str(ctx.author))
+				await ctx.reply(str(ctx.author) + ' has joined the lobby')
+				print(str(ctx.author) + "joined the lobby")
+				print(f"lobby: {lobby_arr}")
+			else:
+				await ctx.reply("user has already joined the lobby")
+		else:
+			await ctx.reply("no")
+	if arg == "leave":
+		if str(ctx.author) in lobby_arr:
+			lobby_arr.remove(str(ctx.author))
+			await ctx.reply(f"{str(ctx.author)} removed from lobby")
+		else:
+			await ctx.reply("user not in lobby")
+#---------------------------------------------------------------------
+	if arg == 'end':
 		a = open("lobby.txt", "w")
 		a.close()
 		lobby_inst = False
