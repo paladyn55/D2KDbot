@@ -3,7 +3,7 @@
 #start lobby - opens a lobby file which users can join
 #clear lobby - clears lobby file
 #lobby begin - makes teams with a given number of teams
-#statupdate - updates stat values for every member
+
 from discord.ext import commands
 import os
 import csv
@@ -36,10 +36,8 @@ bot = commands.Bot(prefix)
 async def on_ready():
   print("------- Bot is ready -------")
 
-#add register command
-@bot.command
+@bot.command()
 async def register(ctx, arg):
-	#append to names csv
 	f = open('names.csv',mode='r',encoding='utf-8')
 	csv_o = csv.reader(f)
 	usr_arr = csv_arr(csv_o)
@@ -53,8 +51,11 @@ async def register(ctx, arg):
 		cw = csv.writer(f)
 		usr = str(ctx.author)
 		b_name, b_num = arg.split('#')
-		usr_t = [usr, b_name, b_num]
+		usr_t = [usr, b_name, b_num, "\n"]
 		cw.writerow(usr_t)
+		await ctx.reply('registered')
+	else:
+		await ctx.reply("already registered")
 
 lobby_arr = []
 lobby_inst = False
