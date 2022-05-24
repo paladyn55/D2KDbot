@@ -7,10 +7,7 @@
 from discord.ext import commands
 import os
 import csv
-import team_sort
 import team_gen
-import getPlayerStats
-
 
 def arr_load(file):
 	arr = []
@@ -103,18 +100,11 @@ async def lobby(ctx, arg):
 	
 @bot.command()
 async def teamgen(ctx):
-	#print(arg)
 	global lobby_inst
 	if lobby_inst == True:
-		#for team in team_sort.snake_draft(team_sort.sort_list(arr_load(l)), int(arg)):
 		num = 1
 		for team in team_gen.teamgen():
 			await ctx.reply(f"team {num}: \n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
 			num += 1
 #---------------------
 bot.run(TOKEN)
-#c = open('names.csv', 'r', encoding='utf-8')
-#csv_o = csv.reader(c)
-#usr_arr = csv_arr(csv_o)
-#for usr in usr_arr:
-#	print(getPlayerStats.stat_get(usr[1], usr[2]))

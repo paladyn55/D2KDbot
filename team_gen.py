@@ -28,7 +28,6 @@ def snake_draft(ordered_players, people_per_team):
         for team in teams:
             team.append(ordered_players.pop(0))
         teams = invert_array(teams)
-    
     return teams
 
 
@@ -51,4 +50,3 @@ def teamgen():
 			usr.append(getPlayerStats.stat_get(usr[1], usr[2]))
 		ordered_players = sorted(b_name_lobby,key=lambda l:l[3], reverse=False)
 		return snake_draft(ordered_players, 3)
-  
