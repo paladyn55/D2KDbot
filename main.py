@@ -96,11 +96,8 @@ async def lobby(ctx, arg):
 #---------------------------------------------------------------------
 		if arg == "check":
 			print(lobby_arr)
-			await ctx.reply(lobby_arr)
 			
 	if arg == 'end':
-		a = open("lobby.txt", "w")
-		a.close()
 		lobby_inst = False
 		lobby_arr = []
 		await ctx.reply("lobby closed")
