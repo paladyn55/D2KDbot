@@ -73,7 +73,6 @@ async def lobby(ctx, arg):
 #---------------------------------------------------------------------
 	if arg == "join":
 		if lobby_inst == True:
-		
 			check = 0
 			for usr in lobby_arr:
 				if usr == str(ctx.author):
@@ -87,6 +86,7 @@ async def lobby(ctx, arg):
 				await ctx.reply("user has already joined the lobby")
 		else:
 			await ctx.reply("no")
+#---------------------------------------------------------------------
 	if arg == "leave":
 		if str(ctx.author) in lobby_arr:
 			lobby_arr.remove(str(ctx.author))
@@ -94,10 +94,15 @@ async def lobby(ctx, arg):
 		else:
 			await ctx.reply("user not in lobby")
 #---------------------------------------------------------------------
+		if arg == "check":
+			print(lobby_arr)
+			await ctx.reply(lobby_arr)
+			
 	if arg == 'end':
 		a = open("lobby.txt", "w")
 		a.close()
 		lobby_inst = False
+		lobby_arr = []
 		await ctx.reply("lobby closed")
 	
 @bot.command()
