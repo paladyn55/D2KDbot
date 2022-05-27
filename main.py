@@ -1,5 +1,5 @@
 #command list
-#register - ties discord username to trackernetwork page /
+#register - ties discord username to bungie username
 #start lobby - opens a lobby file which users can join
 #clear lobby - clears lobby file
 #lobby begin - makes teams with a given number of teams
@@ -94,9 +94,11 @@ async def lobby(ctx, arg):
 		else:
 			await ctx.reply("user not in lobby")
 #---------------------------------------------------------------------
-		if arg == "check":
-			print(lobby_arr)
-			
+	if arg == "check":
+		print(lobby_arr)
+		for usr in lobby_arr:
+			await (ctx.author).send(usr)
+#---------------------------------------------------------------------
 	if arg == 'end':
 		lobby_inst = False
 		lobby_arr = []

@@ -4,7 +4,7 @@ def stat_get(bungieName, b_num):
 
     # the first area is just to get bungie ID and platform from bungie name
     # dictionary to hold extra headers
-    HEADERS = {"X-API-Key": "898ee44d41714955909f5b4929cfd45a"}
+    HEADERS = {"X-API-Key": os.environ['BNG_KEY']}
 
     bungieNum = b_num.strip("#")
 
