@@ -58,7 +58,7 @@ async def register(ctx, arg):
 	else:
 		await ctx.reply("already registered")
 
-lobby_arr = []
+lobby_arr = ["<paladyn>#8056", "Singham, Son of Iron Lord Mikey#7874", "DLH3LIX#6618", "Generic#0866", "iDarknesslll#7448", "ReapersStrike#0108"]
 lobby_inst = False
 
 @bot.command()
@@ -103,14 +103,35 @@ async def lobby(ctx, arg):
 		lobby_inst = False
 		lobby_arr = []
 		await ctx.reply("lobby closed")
-	
 @bot.command()
-async def teamgen(ctx):
+async def lobbyadd(ctx, arg):
 	global lobby_inst
+	global lobby_arr
+	if lobby_inst == True:
+		if arg == 'Alice':
+			lobby_arr.append('Alice ❤#9033')
+			await ctx.reply("Alice ❤#9033 added")
+		if arg == 'Zewps':
+			lobby_arr.append('Alice ❤#9033')
+			await ctx.reply("Alice ❤#9033 added")
+		else:	
+			lobby_arr.append(arg)
+			await ctx.reply(f"{arg} added")
+		print(lobby_arr)
+@bot.command()
+async def teamgen(ctx, arg):
+	global lobby_inst
+	global lobby_arr
 	if lobby_inst == True:
 		num = 1
-		for team in team_gen.teamgen():
-			await ctx.reply(f"team {num}: \n{team[0][0]}\n{team[1][0]}\n{team[2][0]}")
+		teams = team_gen.teamgen(lobby_arr, int(arg))
+		for team in teams:
+			names = []
+			for usr in team:
+				names.append(usr[0])
+			await ctx.reply(f"team {num}: {names}")
 			num += 1
+		print(teams)
 #---------------------
+
 bot.run(TOKEN)
